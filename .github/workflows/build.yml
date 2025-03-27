@@ -40,6 +40,7 @@ jobs:
           DEFAULT_BRANCH=$(git remote show pipa | awk '/HEAD branch/ {print $NF}')
           git fetch pipa $DEFAULT_BRANCH
           git reset --hard pipa/$DEFAULT_BRANCH
+          pmbootstrap checksum linux-postmarketos-qcom-sm8250-pipa
 
       - name: Build the xiaomi-pipa without DE
         run: |
